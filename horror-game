@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Horror Game</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+            color: black; /* Set the text color to white */
+
+        }
+
+
+        h1 {
+
+            color: #FF0000;
+
+        }
+
+
+        p {
+
+            margin: 20px;
+
+        }
+
+
+        button {
+
+            padding: 10px 20px;
+
+            margin: 10px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+        }
+
+
+        #game-over {
+
+            color: #FF0000;
+
+            font-weight: bold;
+
+            font-size: 24px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Horror Game</h1>
+
+    <p id="story">You wake up in a dark, eerie room. The air is cold, and an unsettling feeling fills the atmosphere. What do you do?</p>
+
+    <div id="choices">
+
+        <button onclick="choosePath(1)">Look for an exit</button>
+
+        <button onclick="choosePath(2)">Call for help</button>
+
+    </div>
+
+    <p id="game-over" style="display: none;">Game Over!</p>
+
+
+    <script>
+
+        var storyElement = document.getElementById("story");
+
+        var choicesElement = document.getElementById("choices");
+
+        var gameOverElement = document.getElementById("game-over");
+
+
+        function choosePath(choice) {
+
+            if (choice === 1) {
+
+                storyElement.textContent = "You stumble through the darkness, feeling your way around. Suddenly, you hear a chilling whisper behind you. What do you do?";
+
+                choicesElement.innerHTML = '<button onclick="choosePath(3)">Turn around</button><button onclick="choosePath(4)">Keep moving forward</button>';
+
+            } else if (choice === 2) {
+
+                storyElement.textContent = "You frantically search for your phone and dial for help, but there's no signal. As you put down the phone, you hear a distant, bone-chilling laugh. What do you do?";
+
+                choicesElement.innerHTML = '<button onclick="choosePath(5)">Hide in a corner</button><button onclick="choosePath(6)">Investigate the sound</button>';
+
+            } else if (choice === 3) {
+
+                storyElement.textContent = "As you turn around, a cold hand grabs your shoulder. You scream in terror, but it's too late. The darkness consumes you.";
+
+                choicesElement.style.display = "none";
+
+                gameOverElement.style.display = "block";
+
+            } else if (choice === 4) {
+
+                storyElement.textContent = "You keep moving forward, trying to ignore the eerie whispers around you. Suddenly, the floor collapses beneath you, and you fall into a deep, dark pit.";
+
+                choicesElement.style.display = "none";
+
+                gameOverElement.style.display = "block";
+
+            } else if (choice === 5) {
+
+                storyElement.textContent = "You hide in a corner, trembling with fear. The room becomes silent, and you think you're safe. But then, a shadowy figure emerges from the darkness and engulfs you.";
+
+                choicesElement.style.display = "none";
+
+                gameOverElement.style.display = "block";
+
+            } else if (choice === 6) {
+
+                storyElement.textContent = "You muster up the courage to investigate the sound. As you approach, you see a flickering light in the distance. It leads you to an exit, saving you from the horrors of the dark room.";
+
+                choicesElement.style.display = "none";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
