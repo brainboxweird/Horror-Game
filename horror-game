@@ -14,7 +14,7 @@
 
             text-align: center;
 
-            color: black; /* Set the text color to white */
+            color: black;
 
         }
 
